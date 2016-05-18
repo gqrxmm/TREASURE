@@ -15,12 +15,38 @@
 			
 			.mui-bar.mui-bar-nav {
 				opacity: 0.7;
+				background-color: black;
+			}
+			
+			.title-logo {
+				padding-top: 5px;
+				margin-left: 30px;
+				
+			}
+			
+			.image-link {
+				margin: 10px;
+			}
+			
+			img.image-corner {
+				border-radius: 5px;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+			}
+			
+			.mui-icon.mui-icon-chatboxes.mui-pull-right {
+				color: white;
+				margin-right: 0px;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="mui-bar mui-bar-nav">
-			
+			<img class="title-logo" src="images/logo.png" width="60%"/>
+			<a href="#" class="mui-icon mui-icon-chatboxes mui-pull-right"></a>
+			<div class="mui-input-row mui-search">
+				<input type="search" class="mui-input-clear" placeholder="">
+			</div>
 		</div>
 		
 		<div id="slider" class="mui-slider">
@@ -40,6 +66,10 @@
 			</div>
 		</div>
 
+	<div class="image-link">
+		<a href="#"><img class="image-corner" src="images/poster.png" width="100%"/></a>
+	</div>
+		
 	</body>
 	
 	<script src="js/mui.min.js"></script>
