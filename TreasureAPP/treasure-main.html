@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Treasure APP</title>
+    
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <style>
+		body {
+			background-color: #e0e0f0;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<nav class="mui-bar mui-bar-tab">
+		<a id="defaultTab" class="mui-tab-item mui-active" href="treasure-tab-home.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="treasure-tab-goods.html">
+			<span class="mui-icon mui-icon-eye"></span>
+			<span class="mui-tab-label">商品</span>
+		</a>
+		<a class="mui-tab-item" href="treasure-tab-shop.html">
+			<span class="mui-icon mui-icon-location"></span>
+			<span class="mui-tab-label">店铺</span>
+		</a>
+		<a class="mui-tab-item" href="treasure-tab-mine.html">
+			<span class="mui-icon mui-icon-contact"></span>
+			<span class="mui-tab-label">我的</span>
+		</a>
+	</nav>
+	
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	
+      	var subpages = ['treasure-tab-home.html', 'treasure-tab-goods.html', 'treasure-tab-shop.html', 'treasure-tab-mine.html'];
+		var subpage_style = {
+			top: '45px', // MUI标题栏的默认高度为45px
+			bottom: '51px'
+		};
+		
+		var aniShow = {};
+		
+		 //创建子页面，首个选项卡页面显示，其它均隐藏；
+		mui.plusReady(function() {
+			var self = plus.webview.currentWebview();
+			for (var i = 0; i < 4; i++) {
+				var temp = {};
+				var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+				if (i > 0) {
+					sub.hide();
+				}else{
+					temp[subpages[i]] = "true";
+					mui.extend(aniShow,temp);
+				}
+				self.append(sub);
+			}
+		});
+		 
+		//当前激活选项
+		var activeTab = subpages[0];
+		var title = document.getElementById("title");
+		
+		mui('.mui-bar-tab').on('tap', 'a', function(event) { // tap单击屏幕
+			var targetTab = this.getAttribute('href');
+			if (targetTab == activeTab) {
+				return;
+			}
+			//更换标题
+			title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+			//显示目标选项卡
+			if(mui.os.ios||aniShow[targetTab]){
+					plus.webview.show(targetTab);
+			}else{
+				//否则，使用fade-in动画，且保存变量
+				var temp = {};
+				temp[targetTab] = "true";
+				mui.extend(aniShow,temp);
+				plus.webview.show(targetTab,"fade-in",300);
+			}
+			//隐藏当前;
+			plus.webview.hide(activeTab);
+			//更改当前活跃的选项卡
+			activeTab = targetTab;
+		});
+		
+    </script>
+</body>
+</html>
