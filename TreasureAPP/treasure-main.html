@@ -10,9 +10,30 @@
     <link href="css/mui.min.css" rel="stylesheet"/>
     <style>
 		body {
-			background-color: #e0e0f0;
+			background-color: darkslategray;
+		}
+		
+		.mui-bar-tab {
+			height: 45px;
+		}
+		
+		.mui-bar-tab .mui-tab-item {		    
+		    height: 45px;    
+		}
+		
+		.mui-bar-tab .mui-tab-item .mui-icon {
+		    top: 0px;	
+		    width: 24px;
+		    height: 24px;
+		   
+		}
+		
+		.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label {
+			font-size: 12px;
+			line-height: 15px;
 		}
 	</style>
+	
 </head>
 
 <body>
@@ -22,9 +43,13 @@
 			<span class="mui-icon mui-icon-home"></span>
 			<span class="mui-tab-label">首页</span>
 		</a>
-		<a class="mui-tab-item" href="treasure-tab-goods.html">
+		<a class="mui-tab-item" href="treasure-tab-hot.html">
 			<span class="mui-icon mui-icon-eye"></span>
-			<span class="mui-tab-label">商品</span>
+			<span class="mui-tab-label">爆款</span>
+		</a>
+		<a class="mui-tab-item" href="treasure-tab-community.html">
+			<span class="mui-icon mui-icon-pengyouquan"></span>
+			<span class="mui-tab-label">社区</span>
 		</a>
 		<a class="mui-tab-item" href="treasure-tab-shop.html">
 			<span class="mui-icon mui-icon-location"></span>
@@ -40,10 +65,10 @@
 	<script type="text/javascript" charset="utf-8">
       	mui.init();
       	
-      	var subpages = ['treasure-tab-home.html', 'treasure-tab-goods.html', 'treasure-tab-shop.html', 'treasure-tab-mine.html'];
+      	var subpages = ['treasure-tab-home.html', 'treasure-tab-hot.html', 'treasure-tab-community.html', 'treasure-tab-shop.html', 'treasure-tab-mine.html'];
 		var subpage_style = {
-			top: '45px', // MUI标题栏的默认高度为45px
-			bottom: '51px'
+			top: '0px', 
+			bottom: '46px'
 		};
 		
 		var aniShow = {};
@@ -66,15 +91,13 @@
 		 
 		//当前激活选项
 		var activeTab = subpages[0];
-		var title = document.getElementById("title");
 		
 		mui('.mui-bar-tab').on('tap', 'a', function(event) { // tap单击屏幕
 			var targetTab = this.getAttribute('href');
 			if (targetTab == activeTab) {
 				return;
 			}
-			//更换标题
-			title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+
 			//显示目标选项卡
 			if(mui.os.ios||aniShow[targetTab]){
 					plus.webview.show(targetTab);

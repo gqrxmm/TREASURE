@@ -13,10 +13,32 @@
 				background-color: #e0e0f0;
 			}
 			
+			.mui-bar.mui-bar-nav {
+				opacity: 0.7;
+			}
 		</style>
 	</head>
 	<body>
+		<div class="mui-bar mui-bar-nav">
+			
+		</div>
 		
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/poster.png"></a></div>
+				<div class="mui-slider-item"><a href="#"><img src="images/poster.png"></a></div>
+				<div class="mui-slider-item"><a href="#"><img src="images/poster.png"></a></div>
+				<div class="mui-slider-item"><a href="#"><img src="images/poster.png"></a></div>
+				<div class="mui-slider-item"><a href="#"><img src="images/poster.png"></a></div>
+				<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/poster.png"></a></div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
 
 	</body>
 	
@@ -28,10 +50,10 @@
 			swipeBack:true //启用右滑关闭功能
 		});
 		
-		//var slider = mui("#slider");
-		//slider.slider({
-			//interval: 5000 // 自动轮播周期，若为0则不自动播放，默认为0
-		//});
+		var slider = mui("#slider");
+		slider.slider({
+			interval: 5000 // 自动轮播周期，若为0则不自动播放，默认为0
+		});
 		
 	</script>
 </html>

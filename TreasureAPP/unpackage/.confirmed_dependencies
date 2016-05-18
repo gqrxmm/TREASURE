@@ -1,1 +1,24 @@
-null
+{
+	"treasure-main.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/mui.js",
+			"treasure-tab-home.html"
+		],
+		"refer": [
+			"treasure-tab-mine.html",
+			"treasure-tab-shop.html",
+			"treasure-tab-community.html",
+			"treasure-tab-hot.html",
+			"treasure-tab-home.html"
+		]
+	},
+	"treasure-tab-home.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	}
+}
