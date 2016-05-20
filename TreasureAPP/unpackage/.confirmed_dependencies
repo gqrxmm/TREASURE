@@ -21,7 +21,43 @@
 			"css/mui.min.css",
 			"images/poster.png",
 			"fonts/mui.ttf",
-			"images/logo.png"
+			"images/logo.png",
+			"images/goods-main.png",
+			"treasure-goods-content.html"
+		],
+		"refer": [
+			"treasure-goods-content.html"
+		]
+	},
+	"treasure-goods-content.html": {
+		"resources": [
+			"images/goods-second.png",
+			"images/goods-single.png",
+			"treasure-tab-home.html",
+			"images/goods-main.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"treasure-goods-detail.html"
+		],
+		"refer": [
+			"treasure-tab-home.html",
+			"treasure-goods-detail.html"
+		]
+	},
+	"treasure-goods-detail.html": {
+		"resources": [
+			"images/goods-image.png",
+			"css/app.css",
+			"images/goods-intro.png",
+			"images/user-photo.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"treasure-goods-content.html"
+		],
+		"refer": [
+			"treasure-goods-content.html"
 		]
 	}
 }
