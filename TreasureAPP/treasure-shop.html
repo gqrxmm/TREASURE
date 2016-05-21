@@ -13,6 +13,36 @@
 				background-color: #e0e0f0;
 			}
 			
+			.mui-icon.mui-icon-arrowleft.mui-pull-left {
+				position: fixed;
+				background-color: mediumvioletred;
+				z-index: 99;
+				border-radius: 20px;
+				-moz-border-radius: 20px;
+				-webkit-border-radius: 20px;
+				top: 10px;
+				left: 10px;
+				opacity: 0.6;
+				color: white;
+				padding: 4px;
+				font-size: 30px;
+			}
+			
+			.mui-icon.mui-icon-email.mui-pull-right {
+				position: fixed;
+				background-color: mediumvioletred;
+				z-index: 99;
+				border-radius: 20px;
+				-moz-border-radius: 20px;
+				-webkit-border-radius: 20px;
+				top: 10px;
+				right: 10px;
+				opacity: 0.6;
+				color: white;
+				padding: 4px;
+				font-size: 30px;
+			}
+			
 			.shop-name {
 				margin-top: -40px;
 				text-align: center;
@@ -52,6 +82,10 @@
 		</style>
 	</head>
 	<body>
+		
+		<a class="mui-icon mui-icon-arrowleft mui-pull-left mui-action-back"></a>
+		<a id="message" class="mui-icon mui-icon-email mui-pull-right"></a>
+		
 		<div class="shop-content">
 			<a href="#">
 				<img src="images/shop-overview.png" width="100%"/>
@@ -96,5 +130,12 @@
 		    map.addControl(toolBar);
 		    map.addControl(scale);
 		})
+	    
+	    document.getElementById('message').addEventListener('tap', function(){
+			mui.openWindow({
+				url: 'treasure-message.html',
+				id: 'message',
+			});
+		});
 	</script>
 </html>

@@ -52,7 +52,7 @@
 			.tag {
 				background-color: mediumvioletred;
 				color: white;
-				order-radius: 2px;
+				border-radius: 2px;
 				-moz-border-radius: 2px;
 				-webkit-border-radius: 2px;
 				padding: 2px;
@@ -142,8 +142,8 @@
 		</style>
 	</head>
 	<body>
-		<a href="treasure-goods-content.html" class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
-		<a href="#" class="mui-icon mui-icon-email mui-pull-right"></a>
+		<a class="mui-icon mui-icon-arrowleft mui-pull-left mui-action-back"></a>
+		<a id="message" class="mui-icon mui-icon-email mui-pull-right"></a>
 		
 		<a class="mui-icon mui-icon-upload"><span style="font-size: 15px;">分享</span></a>
 		<a class="mui-icon mui-icon-star"><span style="font-size: 15px;">收藏</span></a>
@@ -168,7 +168,7 @@
 			</div>
 		</div>
 		<div class="goods-intro">
-			<p style="color: black; margin-bottom: 0px;">商品名称</p>
+			<p style="color: black; margin-bottom: 0px; margin-top: 3px;">商品名称</p>
 			<div style="margin: 3px;">
 				<span style="color: red; font-size: 15px; ">商品价格</span>
 				<span style="color: gray; font-size: 12px; "><s>商品原价</s></span>
@@ -186,7 +186,6 @@
 				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted">
 					<a class="mui-control-item mui-active" href="#item1">商品详情</a>
 					<a class="mui-control-item" href="#item2">商品评论</a>
-					
 				</div>
 			</div>
 			<div>
@@ -269,7 +268,13 @@
 	<script type="text/javascript" charset="UTF-8">
 		mui.init({
 				swipeBack:true //启用右滑关闭功能
+		});
+		
+		document.getElementById('message').addEventListener('tap', function(){
+			mui.openWindow({
+				url: 'treasure-message.html',
+				id: 'message',
 			});
-
+		});
 	</script>
 </html>

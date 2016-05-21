@@ -51,60 +51,48 @@
 				padding: 10px;
 				border: 1px solid darkslategray;
 				
-				-ms-transform:rotate(-8deg); /* IE 9 */
-				-moz-transform:rotate(-8deg); /* Firefox */
-				-webkit-transform:rotate(-8deg); /* Safari and Chrome */
-				transform:rotate(-8deg);
+				-ms-transform:rotate(-7deg); /* IE 9 */
+				-moz-transform:rotate(-7deg); /* Firefox */
+				-webkit-transform:rotate(-7deg); /* Safari and Chrome */
+				transform:rotate(-7deg);
 			}
 		</style>
 	</head>
 	<body>
-		<div class="shop-content rote-left">
-			<a href="#">
-				<img src="images/shop-overview.png" width="100%"/>
-				<div class="shop-name">店铺名称</div>
-				<div class="shop-address">店铺地址</div>
-			</a>
+		<div id="shop-1" class="shop-content rote-left">
+			<img src="images/shop-overview.png" width="100%"/>
+			<div class="shop-name">店铺名称</div>
+			<div class="shop-address">店铺地址</div>
 		</div>
 		
-		<div class="shop-content rote-right">
-			<a href="#">
-				<img src="images/shop-overview.png" width="100%"/>
-				<div class="shop-name">店铺名称</div>
-				<div class="shop-address">店铺地址</div>
-			</a>
+		<div id="shop-2" class="shop-content rote-right">
+			<img src="images/shop-overview.png" width="100%"/>
+			<div class="shop-name">店铺名称</div>
+			<div class="shop-address">店铺地址</div>
 		</div>
 		
-		<div class="shop-content rote-left">
-			<a href="#">
-				<img src="images/shop-overview.png" width="100%"/>
-				<div class="shop-name">店铺名称</div>
-				<div class="shop-address">店铺地址</div>
-			</a>
+		<div id="shop-3" class="shop-content rote-left">
+			<img src="images/shop-overview.png" width="100%"/>
+			<div class="shop-name">店铺名称</div>
+			<div class="shop-address">店铺地址</div>
 		</div>
 		
-		<div class="shop-content rote-right">
-			<a href="#">
-				<img src="images/shop-overview.png" width="100%"/>
-				<div class="shop-name">店铺名称</div>
-				<div class="shop-address">店铺地址</div>
-			</a>
+		<div id="shop-4" class="shop-content rote-right">
+			<img src="images/shop-overview.png" width="100%"/>
+			<div class="shop-name">店铺名称</div>
+			<div class="shop-address">店铺地址</div>
 		</div>
 		
-		<div class="shop-content rote-left" >
-			<a href="#">
-				<img src="images/shop-overview.png" width="100%"/>
-				<div class="shop-name">店铺名称</div>
-				<div class="shop-address">店铺地址</div>
-			</a>
+		<div id="shop-5" class="shop-content rote-left">
+			<img src="images/shop-overview.png" width="100%"/>
+			<div class="shop-name">店铺名称</div>
+			<div class="shop-address">店铺地址</div>
 		</div>
 		
-		<div class="shop-content rote-right">
-			<a href="#">
-				<img src="images/shop-overview.png" width="100%"/>
-				<div class="shop-name">店铺名称</div>
-				<div class="shop-address">店铺地址</div>
-			</a>
+		<div id="shop-6" class="shop-content rote-right">
+			<img src="images/shop-overview.png" width="100%"/>
+			<div class="shop-name">店铺名称</div>
+			<div class="shop-address">店铺地址</div>
 		</div>
 	</body>
 	
@@ -114,10 +102,17 @@
 			swipeBack:true //启用右滑关闭功能
 		});
 		
-		//var slider = mui("#slider");
-		//slider.slider({
-			//interval: 5000 // 自动轮播周期，若为0则不自动播放，默认为0
-		//});
+		var shops_size = 6;
+		for(var i=0; i<shops_size; i++) {
+			var shop_id = 'shop-' + (i+1).toString();
+			
+			document.getElementById(shop_id).addEventListener('tap', function(){
+				mui.openWindow({
+					url: 'treasure-shop.html',
+					id: shop_id
+				});
+			});
+		}
 		
 	</script>
 </html>

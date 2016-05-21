@@ -26,7 +26,8 @@
 			"treasure-goods-content.html"
 		],
 		"refer": [
-			"treasure-goods-content.html"
+			"treasure-goods-content.html",
+			"treasure-message.html"
 		]
 	},
 	"treasure-goods-content.html": {
@@ -42,7 +43,8 @@
 		],
 		"refer": [
 			"treasure-tab-home.html",
-			"treasure-goods-detail.html"
+			"treasure-goods-detail.html",
+			"treasure-message.html"
 		]
 	},
 	"treasure-goods-detail.html": {
@@ -58,6 +60,34 @@
 		],
 		"refer": [
 			"treasure-goods-content.html"
+		]
+	},
+	"treasure-tab-shop.html": {
+		"resources": [
+			"images/shop-overview.png"
+		],
+		"refer": [
+			"treasure-shop.html"
+		]
+	},
+	"treasure-shop.html": {
+		"resources": [
+			"images/add-content.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/shop-overview.png"
+		],
+		"refer": [
+			"treasure-message.html"
+		]
+	},
+	"treasure-message.html": {
+		"resources": [
+			"images/message.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }

@@ -51,7 +51,7 @@
 	<body>
 		<div style="" class="mui-bar mui-bar-nav">
 			<img class="title-logo" src="images/logo.png" width="70%"/>
-			<a href="#" class="mui-icon mui-icon-email mui-pull-right"></a>
+			<a id="message" class="mui-icon mui-icon-email mui-pull-right"></a>
 			<div class="mui-input-row mui-search">
 				<input type="search" class="mui-input-clear" placeholder="">
 			</div>
@@ -76,38 +76,38 @@
 		</div>
 
 	<div class="image-link">
-		<a href="treasure-goods-content.html"><img class="image-corner" src="images/goods-main.png" width="100%"/></a>
+		<img id="goods-1" class="image-corner" src="images/goods-main.png" width="100%"/>
 	</div>
 	
 	<div class="image-link">
-		<a href="treasure-goods-content.html"><img class="image-corner" src="images/goods-main.png" width="100%"/></a>
+		<img id="goods-2" class="image-corner" src="images/goods-main.png" width="100%"/>
 	</div>
 	
 	<div class="image-link">
-		<a href="treasure-goods-content.html"><img class="image-corner" src="images/goods-main.png" width="100%"/></a>
+		<img id="goods-3" class="image-corner" src="images/goods-main.png" width="100%"/>
 	</div>
 	
 	<div class="image-link">
-		<a href="treasure-goods-content.html"><img class="image-corner" src="images/goods-main.png" width="100%"/></a>
+		<img id="goods-4" class="image-corner" src="images/goods-main.png" width="100%"/>
 	</div>
 	
 	<div class="image-link">
-		<a href="treasure-goods-content.html"><img class="image-corner" src="images/goods-main.png" width="100%"/></a>
+		<img id="goods-5" class="image-corner" src="images/goods-main.png" width="100%"/>
 	</div>
 	
 	<div class="image-link">
-		<a href="treasure-goods-content.html"><img class="image-corner" src="images/goods-main.png" width="100%"/></a>
+		<img id="goods-6" class="image-corner" src="images/goods-main.png" width="100%"/>
 	</div>
 	
 	<div class="image-link">
-		<a href="treasure-goods-content.html"><img class="image-corner" src="images/goods-main.png" width="100%"/></a>
+		<img id="goods-7" class="image-corner" src="images/goods-main.png" width="100%"/>
 	</div>
 		
 	</body>
 	
 	<script src="js/mui.min.js"></script>
-	<script src="js/mui.pullToRefresh.js"></script>
-	<script src="js/mui.pullToRefresh.material.js"></script>
+	<!--<script src="js/mui.pullToRefresh.js"></script>
+	<script src="js/mui.pullToRefresh.material.js"></script> -->
 	<script type="text/javascript" charset="utf-8">
 		mui.init({
 			swipeBack:true //启用右滑关闭功能
@@ -118,5 +118,23 @@
 			interval: 5000 // 自动轮播周期，若为0则不自动播放，默认为0
 		});
 		
+		var goods_size = 7;
+		for(var i=0; i<goods_size; i++) {
+			var goods_id = 'goods-' + (i+1).toString();
+			
+			document.getElementById(goods_id).addEventListener('tap', function(){
+				mui.openWindow({
+					url: 'treasure-goods-content.html',
+					id: goods_id,
+				});
+			});
+		}
+		
+		document.getElementById('message').addEventListener('tap', function(){
+			mui.openWindow({
+				url: 'treasure-message.html',
+				id: 'message',
+			});
+		});
 	</script>
 </html>

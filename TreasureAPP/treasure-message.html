@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>MESSAGE</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,body {
+				background-color: #e0e0f0;
+			}
+			
+			.mui-bar.mui-bar-nav {
+				text-align: center;
+				background-color: mediumvioletred;
+			}
+			
+			.message-title {
+				padding: 12px;
+				font-size: 20px;
+				color: white;
+				font-weight: 800;
+			}
+			
+			.mui-content {
+				text-align: center;
+				background-color: #e0e0f0;
+				margin: 10px 0px 10px 0px;
+			}
+			
+			.mui-table-view {
+				display: inline;
+			}
+			
+			.message-content {
+				margin: 10px 20px 10px 20px;
+				border-radius: 10px;
+				-moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+				background-color: white;
+			}
+			
+			.mui-table-view .mui-media-object {
+				max-width: 100px;
+				height: 100px;
+			}
+			
+			p {
+				color: black; 
+				padding-left: 5px; 
+				white-space:normal;
+				text-align: left;
+			}
+			
+			.message {
+				padding-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-bar mui-bar-nav">
+			<a style="color: white;" class="mui-icon mui-icon-arrowleft mui-pull-left mui-action-back"></a>
+			<div class="message-title">消息盒子</div>
+		</div>
+		
+		<div class="mui-content">
+			<div class="message">
+				———— 2016-5-20 16:37 ————
+				<div class="message-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="images/message.png">
+								<div class="mui-media-body">
+									<p>消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="message">
+				———— 2016-5-20 10:37 ————
+				<div class="message-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="images/message.png">
+								<div class="mui-media-body">
+									<p>消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="message">
+				———— 2016-5-19 16:37 ————
+				<div class="message-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="images/message.png">
+								<div class="mui-media-body">
+									<p>消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="message">
+				———— 2016-5-18 16:37 ————
+				<div class="message-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media">
+							<a href="javascript:;">
+								<img class="mui-media-object mui-pull-left" src="images/message.png">
+								<div class="mui-media-body">
+									<p>消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。消息。</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	
+	<script src="js/mui.min.js"></script>
+	<!--<script src="js/mui.pullToRefresh.js"></script>
+	<script src="js/mui.pullToRefresh.material.js"></script> -->
+	<script type="text/javascript" charset="utf-8">
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		
+	</script>
+</html>

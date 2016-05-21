@@ -16,7 +16,7 @@
 			.mui-icon.mui-icon-arrowleft.mui-pull-left {
 				position: fixed;
 				background-color: mediumvioletred;
-				
+				z-index: 99;
 				border-radius: 20px;
 				-moz-border-radius: 20px;
 				-webkit-border-radius: 20px;
@@ -31,7 +31,7 @@
 			.mui-icon.mui-icon-email.mui-pull-right {
 				position: fixed;
 				background-color: mediumvioletred;
-				
+				z-index: 99;
 				border-radius: 20px;
 				-moz-border-radius: 20px;
 				-webkit-border-radius: 20px;
@@ -80,14 +80,19 @@
 				padding: 2px;
 				font-size: 10px;
 			}
+			
+			.goods-title-image {
+				padding: 20px;
+				border-bottom: 1px solid #e0e0f0;
+			}
 		</style>
 		
 	</head>
 	
 	<body>
 		<div class="mui-content">
-			<a href="treasure-tab-home.html" class="mui-icon mui-icon-arrowleft mui-pull-left"></a>
-			<a href="#" class="mui-icon mui-icon-email mui-pull-right"></a>			
+			<a class="mui-icon mui-icon-arrowleft mui-pull-left mui-action-back"></a>
+			<a id="message" class="mui-icon mui-icon-email mui-pull-right"></a>			
 			<div class="introduction">
 				<img src="images/goods-main.png" width="100%"/>
 				<h4 style="text-align: center; color: black; font-size: 18px; margin: 0px;">标题</h4>
@@ -102,13 +107,11 @@
 		
 		<div class="goods-content">
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img src="images/goods-second.png" width="100%">
-						<div class="content-inside">
-							商品亚列别
-						</div>
-					</a>
+				<li class="goods-title-image">
+					<img src="images/goods-second.png" width="100%">
+					<div class="content-inside">
+						商品亚列别
+					</div>
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a href="treasure-goods-detail.html">
@@ -142,11 +145,18 @@
 		
 		<div class="goods-content">
 			<ul class="mui-table-view">
+				<li class="goods-title-image">
+					<img src="images/goods-second.png" width="100%">
+					<div class="content-inside">
+						商品亚列别
+					</div>
+				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a href="treasure-goods-detail.html">
-						<img src="images/goods-second.png" width="100%">
-						<div class="content-inside">
-							商品亚列别
+						<img class="mui-media-object mui-pull-left" src="images/goods-single.png">
+						<div class="mui-media-body">
+							<p style="font-size: 15px; color: black;" class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</p>
+							<p style="color: red; padding-left: 5px; font-size: 12px;">商品价格</p>
 						</div>
 					</a>
 				</li>
@@ -154,8 +164,8 @@
 					<a href="treasure-goods-detail.html">
 						<img class="mui-media-object mui-pull-left" src="images/goods-single.png">
 						<div class="mui-media-body">
-							<h4 class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</h4>
-							<p style="color: red; padding-left: 5px;">商品价格</p>
+							<p style="font-size: 15px; color: black;" class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</p>
+							<p style="color: red; padding-left: 5px; font-size: 12px;">商品价格</p>
 						</div>
 					</a>
 				</li>
@@ -163,17 +173,8 @@
 					<a href="treasure-goods-detail.html">
 						<img class="mui-media-object mui-pull-left" src="images/goods-single.png">
 						<div class="mui-media-body">
-							<h4 class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</h4>
-							<p style="color: red; padding-left: 5px;">商品价格</p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="treasure-goods-detail.html">
-						<img class="mui-media-object mui-pull-left" src="images/goods-single.png">
-						<div class="mui-media-body">
-							<h4 class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</h4>
-							<p style="color: red; padding-left: 5px;">商品价格</p>
+							<p style="font-size: 15px; color: black;" class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</p>
+							<p style="color: red; padding-left: 5px; font-size: 12px;">商品价格</p>
 						</div>
 					</a>
 				</li>
@@ -182,11 +183,18 @@
 		
 		<div class="goods-content">
 			<ul class="mui-table-view">
+				<li class="goods-title-image">
+					<img src="images/goods-second.png" width="100%">
+					<div class="content-inside">
+						商品亚列别
+					</div>
+				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a href="treasure-goods-detail.html">
-						<img src="images/goods-second.png" width="100%">
-						<div class="content-inside">
-							商品亚列别
+						<img class="mui-media-object mui-pull-left" src="images/goods-single.png">
+						<div class="mui-media-body">
+							<p style="font-size: 15px; color: black;" class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</p>
+							<p style="color: red; padding-left: 5px; font-size: 12px;">商品价格</p>
 						</div>
 					</a>
 				</li>
@@ -194,8 +202,8 @@
 					<a href="treasure-goods-detail.html">
 						<img class="mui-media-object mui-pull-left" src="images/goods-single.png">
 						<div class="mui-media-body">
-							<h4 class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</h4>
-							<p style="color: red; padding-left: 5px;">商品价格</p>
+							<p style="font-size: 15px; color: black;" class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</p>
+							<p style="color: red; padding-left: 5px; font-size: 12px;">商品价格</p>
 						</div>
 					</a>
 				</li>
@@ -203,17 +211,8 @@
 					<a href="treasure-goods-detail.html">
 						<img class="mui-media-object mui-pull-left" src="images/goods-single.png">
 						<div class="mui-media-body">
-							<h4 class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</h4>
-							<p style="color: red; padding-left: 5px;">商品价格</p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="treasure-goods-detail.html">
-						<img class="mui-media-object mui-pull-left" src="images/goods-single.png">
-						<div class="mui-media-body">
-							<h4 class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</h4>
-							<p style="color: red; padding-left: 5px;">商品价格</p>
+							<p style="font-size: 15px; color: black;" class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</p>
+							<p style="color: red; padding-left: 5px; font-size: 12px;">商品价格</p>
 						</div>
 					</a>
 				</li>
@@ -228,5 +227,11 @@
 			swipeBack:true //启用右滑关闭功能
 		});
 		
+		document.getElementById('message').addEventListener('tap', function(){
+			mui.openWindow({
+				url: 'treasure-message.html',
+				id: 'message',
+			});
+		});
 	</script>
 </html>
