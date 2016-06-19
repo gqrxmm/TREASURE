@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta charset="gb2312">
 		<title>Hello MUI</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="css/mui.min.css">
 		<style>
 			html,body {
-				background-color: #e0e0f0;
+				background-color: #e0e0f0; 
 			}
 			
 			.mui-bar.mui-bar-nav {
@@ -58,50 +58,12 @@
 		</div>
 		
 		
-		<div id="slider" class="mui-slider">
-			<div class="mui-slider-group mui-slider-loop">
-				<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/poster.png"></a></div>
-				<div class="mui-slider-item"><a href="#"><img src="images/poster.png"></a></div>
-				<div class="mui-slider-item"><a href="#"><img src="images/poster.png"></a></div>
-				<div class="mui-slider-item"><a href="#"><img src="images/poster.png"></a></div>
-				<div class="mui-slider-item"><a href="#"><img src="images/poster.png"></a></div>
-				<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/poster.png"></a></div>
-			</div>
-			<div class="mui-slider-indicator">
-				<div class="mui-indicator mui-active"></div>
-				<div class="mui-indicator"></div>
-				<div class="mui-indicator"></div>
-				<div class="mui-indicator"></div>
-			</div>
+		<div id="slider" style="margin-bottom: 15px" class="mui-slider">
+			<div id="group" class="mui-slider-group mui-slider-loop"></div>
+			<div id="indicator" class="mui-slider-indicator"></div>
 		</div>
 
-	<div class="image-link">
-		<img id="goods-1" class="image-corner" src="images/goods-main.png" width="100%"/>
-	</div>
-	
-	<div class="image-link">
-		<img id="goods-2" class="image-corner" src="images/goods-main.png" width="100%"/>
-	</div>
-	
-	<div class="image-link">
-		<img id="goods-3" class="image-corner" src="images/goods-main.png" width="100%"/>
-	</div>
-	
-	<div class="image-link">
-		<img id="goods-4" class="image-corner" src="images/goods-main.png" width="100%"/>
-	</div>
-	
-	<div class="image-link">
-		<img id="goods-5" class="image-corner" src="images/goods-main.png" width="100%"/>
-	</div>
-	
-	<div class="image-link">
-		<img id="goods-6" class="image-corner" src="images/goods-main.png" width="100%"/>
-	</div>
-	
-	<div class="image-link">
-		<img id="goods-7" class="image-corner" src="images/goods-main.png" width="100%"/>
-	</div>
+	<div id="gds-object"></div>
 		
 	</body>
 	
@@ -113,22 +75,75 @@
 			swipeBack:true //启用右滑关闭功能
 		});
 		
-		var slider = mui("#slider");
-		slider.slider({
-			interval: 5000 // 自动轮播周期，若为0则不自动播放，默认为0
-		});
-		
-		var goods_size = 7;
-		for(var i=0; i<goods_size; i++) {
-			var goods_id = 'goods-' + (i+1).toString();
-			
-			document.getElementById(goods_id).addEventListener('tap', function(){
-				mui.openWindow({
-					url: 'treasure-goods-content.html',
-					id: goods_id,
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange=function() {
+			if( xmlhttp.readyState==4 && xmlhttp.status==200) {
+				
+				var resp = eval("("+xmlhttp.responseText+")");
+				
+				// 从服务器中载入商品主类别图片
+				var gdsArr = resp.gdsObject;
+				var gdsHTML = document.getElementById("gds-object").innerHTML;
+				
+				for(var i=0; i<gdsArr.length; i++) {
+					gdsHTML += "<div class=\"image-link\">" +
+							"<img id=\"goods-" +
+							gdsArr[i].id + "\" class=\"image-corner\" src=\"" +
+							gdsArr[i].address + 
+							"\" width=\"100%\"/>" +
+					    	"</div>";
+				}
+				
+				document.getElementById("gds-object").innerHTML = gdsHTML;
+				
+				for(var i=0; i<gdsArr.length; i++) {
+					bound(gdsArr[i].id);
+				}					
+
+				function bound(spec_id) {
+					var gId = 'goods-'+spec_id;
+					document.getElementById(gId).addEventListener('click', function() {
+						mui.openWindow({
+							url: 'http://123.206.212.23:8080/treasure/treasure-goods-content.jsp?id='+spec_id,
+							id: spec_id
+						});
+					}); 
+				}
+				
+				// 从服务器中载入海报
+				var posterArr = resp.posterObject;
+				var groupHTML = document.getElementById("group").innerHTML; 
+				var indicatorHTML = document.getElementById("indicator").innerHTML;
+				
+				groupHTML += "<div class=\"mui-slider-item mui-slider-item-duplicate\"><a><img src=\"" + 
+							posterArr[posterArr.length-1].address + 
+							"\"></a></div>";
+				for(var i=0; i<posterArr.length; i++) {
+					groupHTML += "<div class=\"mui-slider-item\"><a><img src=\"" +
+								posterArr[i].address + 
+								"\"></a></div>";
+					if(0 == i) {
+						indicatorHTML += "<div class=\"mui-indicator mui-active\"></div>";
+					} else {
+						indicatorHTML += "<div class=\"mui-indicator\"></div>";
+					}
+				}
+				
+				groupHTML += "<div class=\"mui-slider-item mui-slider-item-duplicate\"><a><img src=\"" + 
+							posterArr[0].address + 
+							"\"></a></div>";
+							
+				document.getElementById("group").innerHTML = groupHTML;
+				document.getElementById("indicator").innerHTML = indicatorHTML;
+				
+				mui("#slider").slider({
+					interval: 5000 // 自动轮播周期，若为0则不自动播放，默认为0
 				});
-			});
+			}
 		}
+ 
+		xmlhttp.open("GET","http://123.206.212.23:8080/treasure/get-gds-object" ,true);
+		xmlhttp.send();
 		
 		document.getElementById('message').addEventListener('tap', function(){
 			mui.openWindow({
@@ -136,5 +151,6 @@
 				id: 'message',
 			});
 		});
+		
 	</script>
 </html>

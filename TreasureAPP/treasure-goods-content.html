@@ -46,9 +46,9 @@
 			.goods-content {
 				margin: 10px;	
 				background-color: white;
-				border-radius: 20px;
-				-moz-border-radius: 20px;
-				-webkit-border-radius: 20px;			
+				border-radius: 5px;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;			
 			}
 			
 			.mui-table-view {
@@ -79,6 +79,7 @@
 				-webkit-border-radius: 2px;
 				padding: 2px;
 				font-size: 10px;
+				width: auto;
 			}
 			
 			.goods-title-image {
@@ -94,14 +95,14 @@
 			<a class="mui-icon mui-icon-arrowleft mui-pull-left mui-action-back"></a>
 			<a id="message" class="mui-icon mui-icon-email mui-pull-right"></a>			
 			<div class="introduction">
-				<img src="images/goods-main.png" width="100%"/>
+				<img id="head-image" src="images/goods-main.png" width="100%"/>
 				<h4 style="text-align: center; color: black; font-size: 18px; margin: 0px;">标题</h4>
-				<div style="margin-left: auto; margin-right: auto; width: 50vw;">
+				<div id="head-tag" style="text-align: center">
 					<span class="tag">标签标签</span>
 					<span class="tag">标签标签</span>
 					<span class="tag">标签标签</span>
 				</div>
-				<p style="color: black; padding: 3px 10px 5px 10px;">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
+				<p id="head-introduce" style="color: black; padding: 3px 10px 5px 10px;">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
 			</div>
 		</div>
 		
@@ -153,7 +154,7 @@
 				</li>
 				<li class="mui-table-view-cell mui-media">
 					<a href="treasure-goods-detail.html">
-						<img class="mui-media-object mui-pull-left" src="images/goods-single.png">
+						<img class="mui-media-object mui-pull-left" src="">
 						<div class="mui-media-body">
 							<p style="font-size: 15px; color: black;" class='mui-ellipsis'>商品详情。商品详情。商品详情。商品详情。</p>
 							<p style="color: red; padding-left: 5px; font-size: 12px;">商品价格</p>
@@ -227,11 +228,31 @@
 			swipeBack:true //启用右滑关闭功能
 		});
 		
+		/*
+		mui.plusReady(function() {
+            var wv = plus.webview.currentWebview();
+            var vText = wv.id;
+            document.getElementById("head-content").setAttribute("value", vText);
+            document.getElementById("head-content").innerHTML = vText;
+        });
+		
 		document.getElementById('message').addEventListener('tap', function(){
 			mui.openWindow({
 				url: 'treasure-message.html',
 				id: 'message',
-			});
+			}); 
 		});
+		
+		
+		window.onload=function() {
+			setTimeout(function(){
+				var major_id = document.getElementById("head-content").getAttribute("value");
+				mui.get('http://123.206.212.23:8080/treasure/get-gds-object',{},function(data){
+						//获得服务器响应
+						alert(data.posterObject[0].address);
+					},'json'); 
+			},100);
+			
+		} */
 	</script>
 </html>

@@ -5,7 +5,9 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/mui.js",
-			"treasure-tab-home.html"
+			"treasure-tab-home.html",
+			"treasure-tab-community.html",
+			"treasure-tab-shop.html"
 		],
 		"refer": [
 			"treasure-tab-mine.html",
